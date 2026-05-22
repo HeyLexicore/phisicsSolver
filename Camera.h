@@ -34,7 +34,7 @@ class Camera{
 
       p_prime.x = (p.x-pos.x)/(p.z-pos.z);
       p_prime.y = -(p.y-pos.y)/(p.z-pos.z);
-
+      p_prime.z = 0.7/sqrt(pow((p.x-pos.x),2)+pow((p.y-pos.y),2)+pow((p.z-pos.z),2))*0.08;
 
       return p.z >= pos.z + fol; 
     }
@@ -63,14 +63,16 @@ class Camera{
       Vec3 projected;
       SDL_Rect draw;
       
-      draw.w = 4;
-      draw.h = 4;
+
 
       SDL_SetRenderDrawColor( renderer, 255, 0, 0, 255 );
       for (auto p: pS){
         if (project(p.pos,projected)){
 
           projected*=h;
+    
+          draw.w = projected.z;
+          draw.h = projected.z;
 
           draw.x = projected.x-draw.w/2.0+w/2.0;
           draw.y = projected.y-draw.h/2.0+h/2.0;

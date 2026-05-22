@@ -17,6 +17,7 @@ class Point{
   public:
     Vec3 vel;
     Vec3 pos;
+    int index;
     Point();
     Point(Vec3 pos, double mass):  mass(mass), pos(pos) {};
     
@@ -33,6 +34,10 @@ class Point{
       pos += vel*dt;
 
       forceAcc = Vec3();
+    }
+
+    Vec3 impulse(){
+      return mass*vel;
     }
 
 };

@@ -11,6 +11,10 @@ class Vec3{
     Vec3(double x, double y, double z): x(x),y(y),z(z) {};
     Vec3(double x, double y): x(x),y(y),z(0) {};
     Vec3 operator-() const { return Vec3(-x,-y,-z); };
+
+    void repr(){
+      printf("Point: X: %f Y: %f Z: %f",x,y,z);
+    }
     
     Vec3 operator+=(const Vec3& v){
       x+=v.x;
