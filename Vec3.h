@@ -1,5 +1,4 @@
 #pragma once
-#include "OBJ_Loader.h"
 #include <cmath>
 
 
@@ -7,13 +6,12 @@ class Vec3{
   public:
     double x,y,z;
     Vec3(): x(0),y(0),z(0) {};
-    Vec3(objl::Vertex Vert) : x(Vert.Position.X), y(Vert.Position.Y), z(Vert.Position.Z) {};
     Vec3(double x, double y, double z): x(x),y(y),z(z) {};
     Vec3(double x, double y): x(x),y(y),z(0) {};
     Vec3 operator-() const { return Vec3(-x,-y,-z); };
 
     void repr(){
-      printf("Point: X: %f Y: %f Z: %f",x,y,z);
+      printf("Point: X: %f Y: %f Z: %f\n",x,y,z);
     }
     
     Vec3 operator+=(const Vec3& v){

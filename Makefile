@@ -4,7 +4,7 @@
 
 # Compiler and flags
 CXX       := g++
-CXXFLAGS  := -std=c++17 -Wall -Wextra -O2 -g
+CXXFLAGS  := -std=c++11 -Wall -Wextra -O2 -g
 INCLUDES  := -I/usr/include/SDL2
 LIBS      := -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 

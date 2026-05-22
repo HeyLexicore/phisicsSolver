@@ -6,7 +6,7 @@
 class Point{
   private:
     Vec3 acc;
-    Vec3 forceAcc;
+
 
     double mass;
 
@@ -17,6 +17,8 @@ class Point{
   public:
     Vec3 vel;
     Vec3 pos;
+    Vec3 forceAcc;
+
     int index;
     Point();
     Point(Vec3 pos, double mass):  mass(mass), pos(pos) {};
